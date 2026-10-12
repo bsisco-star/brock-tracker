@@ -95,4 +95,5 @@ function imp(f){if(f)f.text().then(impText)}
 function go(k){cur=k;tab='today';render()}
 function render(){if(!S.weighins.length&&tab!=='settings')tab='setup';$('#day').value=cur;$('#view').innerHTML=V[tab]();document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===tab));window.scrollTo(0,0)}
 document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{tab=b.dataset.t;render()});$('#day').onchange=e=>{cur=e.target.value||iso(new Date());render()};
+if(location.hash.startsWith('#import=')){try{let p=location.hash.slice(8).replace(/-/g,'+').replace(/_/g,'/');while(p.length%4)p+='=';const d=JSON.parse(new TextDecoder().decode(Uint8Array.from(atob(p),c=>c.charCodeAt(0))));if(!d||(!d.settings&&!d.weighins&&!d.days))throw 0;S={settings:Object.assign({},S.settings,d.settings||{}),weighins:d.weighins||S.weighins,days:Object.assign({},S.days,d.days||{})};save();tab='today';history.replaceState(null,'',location.pathname);render();alert('Your data is loaded')}catch(e){}}
 if(V[location.hash.slice(1)])tab=location.hash.slice(1);render();if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
