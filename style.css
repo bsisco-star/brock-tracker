@@ -1,0 +1,13 @@
+*{box-sizing:border-box}body{margin:0;background:#0f1115;color:#e8eaed;font:17px system-ui,sans-serif;padding-bottom:80px}
+header{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:#161a21;position:sticky;top:0;z-index:2}
+h1{font-size:20px;margin:0}h2{font-size:18px;margin:0 0 8px}main{padding:12px}
+.card{background:#1b2029;border-radius:14px;padding:14px;margin-bottom:12px}
+.bar{height:12px;background:#2a3140;border-radius:6px;overflow:hidden;margin:6px 0}.bar i{display:block;height:100%;background:#3ddc84}
+button{background:#2b6cff;color:#fff;border:0;border-radius:10px;padding:14px 16px;font-size:16px;min-height:48px;margin:3px}
+button.sec{background:#2a3140}button.done{background:#3ddc84;color:#000}
+input,select{background:#0f1115;color:#e8eaed;border:1px solid #333b4a;border-radius:8px;padding:12px;font-size:16px;width:100%;margin:4px 0}
+.row{display:flex;gap:8px}.row>*{flex:1}.muted{color:#9aa3b2;font-size:14px}.big{font-size:26px;font-weight:700}
+nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:#161a21;padding-bottom:env(safe-area-inset-bottom)}
+nav button{flex:1;background:none;margin:0;border-radius:0;font-size:14px;padding:16px 2px}nav button.on{color:#3ddc84;border-top:3px solid #3ddc84}
+table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:6px;border-bottom:1px solid #2a3140;text-align:left}
+.chk{display:flex;align-items:center;gap:10px;padding:6px 0}.chk b{font-size:22px}
